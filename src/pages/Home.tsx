@@ -1,5 +1,4 @@
-import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 function Home() {
   return (
@@ -7,6 +6,6 @@ function Home() {
       <Typography variant="h1">Home</Typography>
     </Container>
   );
-};
+}
 
 export default Home;

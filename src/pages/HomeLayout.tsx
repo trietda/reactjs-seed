@@ -32,26 +32,29 @@ const navItems: NavItem[] = [
 ];
 
 function NavButton(props: NavItem) {
+  const { href, label } = props;
+
   return (
     <Button
       sx={{ color: '#fff' }}
       component={Link}
-      to={props.href}
+      to={href}
     >
-      {props.label}
+      {label}
     </Button>
   );
 }
 
 function DrawerNavItem(props: NavItem) {
+  const { href, label } = props;
   return (
     <ListItem
       component={Link}
       disablePadding
-      to={props.href}
+      to={href}
     >
       <ListItemButton sx={{ textAlign: 'center' }}>
-        <ListItemText primary={props.label} />
+        <ListItemText primary={label} />
       </ListItemButton>
     </ListItem>
   );
@@ -92,16 +95,29 @@ function HomeLayout() {
     <Box>
       <AppBar component="nav">
         <Toolbar>
-          <Container sx={{display: 'flex', alignItems: 'center' }}>
-            <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: 'none' } }}>
+          <Container sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton
+              color="inherit"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
               <FontAwesomeIcon icon={faBars} />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            >
               MUI
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <NavButton key={item.href} label={item.label} href={item.href} />
+                <NavButton
+                  key={item.href}
+                  label={item.label}
+                  href={item.href}
+                />
               ))}
             </Box>
           </Container>

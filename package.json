@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -12,10 +13,10 @@
   "scripts": {
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
     "lint": "eslint . --fix"
   },
   "lint-staged": {
@@ -24,6 +25,7 @@
   "eslintConfig": {
     "env": {
       "browser": true,
+      "node": true,
       "es2021": true
     },
     "extends": [
@@ -254,6 +256,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.0",
-    "lint-staged": "^13.1.2"
+    "lint-staged": "^13.1.2",
+    "postcss": "^8.4.21"
   }
 }
